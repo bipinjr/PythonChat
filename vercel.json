@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.py": {
-      "includeFiles": "{knowledge_base.json,static/**}"
-    }
-  },
+  "builds": [
+    { "src": "api/index.py", "use": "@vercel/python" }
+  ],
   "routes": [
-    { "src": "/(.*)", "dest": "/api/index.py" }
+    { "src": "/(.*)", "dest": "api/index.py" }
   ]
 }
