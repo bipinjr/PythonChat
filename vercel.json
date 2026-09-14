@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/index.py": {
-      "includeFiles": ["knowledge_base.json", "static/**"]
+      "includeFiles": "{knowledge_base.json,static/**}"
     }
   },
   "rewrites": [
