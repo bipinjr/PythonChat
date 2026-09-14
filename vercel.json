@@ -5,7 +5,7 @@
       "includeFiles": "{knowledge_base.json,static/**}"
     }
   },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/index.py" }
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/index.py" }
   ]
 }
