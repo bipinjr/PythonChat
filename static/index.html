@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Q&A Chatbot</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Python Q&A</h1>
+          <p class="subtitle">Ask anything about Python</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main chat area -->
+    <main class="chat-area">
+      <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-card">
+          <div class="welcome-python-logo">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" fill="var(--color-brand)" opacity="0.15"/>
+              <text x="50" y="68" font-size="52" font-weight="700" fill="var(--color-brand)" text-anchor="middle" font-family="serif">🐍</text>
+            </svg>
+          </div>
+          <h2>Ask me anything about Python</h2>
+          <p class="welcome-desc">
+            I can help with basics, data structures, functions, OOP, file I/O,
+            error handling, decorators, generators, and more.
+          </p>
+          <div class="suggestions">
+            <span class="suggestions-label">Try asking:</span>
+            <button class="suggestion-chip" data-question="What is the difference between a list and a tuple?">
+              List vs tuple?
+            </button>
+            <button class="suggestion-chip" data-question="How do I use a for loop in Python?">
+              For loops
+            </button>
+            <button class="suggestion-chip" data-question="What are decorators in Python?">
+              Decorators
+            </button>
+            <button class="suggestion-chip" data-question="What is the difference between == and is?">
+              == vs is
+            </button>
+            <button class="suggestion-chip" data-question="How do I handle errors in Python?">
+              Error handling
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Messages container -->
+      <div class="messages" id="messages">
+        <!-- Messages appear here -->
+      </div>
+
+      <!-- Typing indicator -->
+      <div class="typing-indicator" id="typingIndicator" style="display: none;">
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="typing-text">Python is thinking...</span>
+      </div>
+
+      <!-- Input area -->
+      <div class="input-area">
+        <form id="chatForm" class="chat-form">
+          <div class="input-wrapper">
+            <textarea
+              id="questionInput"
+              class="chat-input"
+              placeholder="Ask a Python question..."
+              rows="1"
+              autofocus
+              aria-label="Your question"
+            ></textarea>
+            <button type="submit" class="send-btn" id="sendBtn" aria-label="Send question">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <p class="input-hint">
+          Powered by local TF-IDF NLP · No APIs · Works offline
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scrollbar styling -->
+  <style>
+    /* Webkit scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--color-muted); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--color-border); }
+  </style>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

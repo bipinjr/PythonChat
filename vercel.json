@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "static/**", "use": "@vercel/static" },
+    { "src": "api/index.py", "use": "@vercel/python" }
+  ],
+  "functions": {
+    "api/index.py": {
+      "includeFiles": ["knowledge_base.json"]
+    }
+  },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/index.py" },
+    { "src": "/admin", "dest": "/static/admin.html" },
+    { "src": "/", "dest": "/static/index.html" },
+    { "src": "/(.*)", "dest": "/static/$1" }
+  ]
+}

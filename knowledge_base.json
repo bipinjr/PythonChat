@@ -1,0 +1,798 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "question": "What is Python?",
+      "answer": "Python is a high-level, interpreted, general-purpose programming language created by Guido van Rossum and first released in 1991. It emphasizes code readability with its notable use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented, and functional programming.",
+      "topic": "basics",
+      "difficulty": "beginner",
+      "code": "# Python is easy to read and write\nprint(\"Hello, World!\")"
+    },
+    {
+      "id": 2,
+      "question": "How do I install Python?",
+      "answer": "Go to python.org/downloads and download the latest version for your OS. On Windows, run the installer and check 'Add Python to PATH'. On macOS, you can use Homebrew: `brew install python3`. On Linux, use your package manager: `sudo apt install python3` (Ubuntu/Debian) or `sudo dnf install python3` (Fedora). Verify with `python --version` or `python3 --version`.",
+      "topic": "basics",
+      "difficulty": "beginner",
+      "code": "# Verify installation\npython --version"
+    },
+    {
+      "id": 3,
+      "question": "How do I write my first Python program?",
+      "answer": "Create a file with a `.py` extension, write your code, and run it with `python filename.py`. The simplest program is the classic Hello World. Python executes code top-to-bottom, so order matters. Comments start with `#`.",
+      "topic": "basics",
+      "difficulty": "beginner",
+      "code": "# hello.py\nprint(\"Hello, World!\")\n\n# Run it:\n# python hello.py"
+    },
+    {
+      "id": 4,
+      "question": "What are the basic data types in Python?",
+      "answer": "Python has several built-in data types: int (integers like 5, -10), float (decimals like 3.14, -0.01), str (text like 'hello'), bool (True/False), list (ordered mutable collection), tuple (ordered immutable collection), dict (key-value pairs), set (unordered unique collection), and NoneType (None). You can check a variable's type with `type()`.",
+      "topic": "basics",
+      "difficulty": "beginner",
+      "code": "x = 5              # int\ny = 3.14           # float\nname = \"Alice\"     # str\nis_valid = True    # bool\nnumbers = [1, 2]   # list\npair = (1, 2)      # tuple\ndata = {'a': 1}    # dict\nunique = {1, 2}    # set\nnothing = None     # NoneType\n\nprint(type(x))     # <class 'int'>"
+    },
+    {
+      "id": 5,
+      "question": "How do I create and use a list in Python?",
+      "answer": "A list is an ordered, mutable collection. Create one with square brackets `[]` or the `list()` constructor. Access elements by index (0-based), slice with `[:]`, modify elements, and use methods like `append()`, `remove()`, `pop()`, `sort()`, and `len()`.",
+      "topic": "data-structures",
+      "difficulty": "beginner",
+      "code": "# Creating lists\nfruits = [\"apple\", \"banana\", \"cherry\"]\nnumbers = list((1, 2, 3))\n\n# Accessing\nprint(fruits[0])      # apple\nprint(fruits[-1])     # cherry\nprint(fruits[1:])     # ['banana', 'cherry']\n\n# Modifying\nfruits.append(\"orange\")\nfruits[0] = \"grape\"\n\n# Useful methods\nlen(fruits)           # 4\nfruits.sort()\nnumbers = [3, 1, 2]\nnumbers.sort()        # [1, 2, 3]"
+    },
+    {
+      "id": 6,
+      "question": "What is the difference between a list and a tuple?",
+      "answer": "Both are ordered sequences, but a list is mutable (you can change, add, or remove elements) while a tuple is immutable (once created, it cannot be changed). Lists use square brackets `[]`, tuples use parentheses `()`. Tuples are slightly faster and are often used for data that shouldn't change, like coordinates or database records.",
+      "topic": "data-structures",
+      "difficulty": "beginner",
+      "code": "# List (mutable)\nmy_list = [1, 2, 3]\nmy_list[0] = 99       # OK\nmy_list.append(4)     # OK\n\n# Tuple (immutable)\nmy_tuple = (1, 2, 3)\n# my_tuple[0] = 99    # TypeError!\n# my_tuple.append(4)  # AttributeError!\n\n# Use tuples for fixed data\ncoordinates = (10, 20)\ncolors = (\"red\", \"green\", \"blue\")"
+    },
+    {
+      "id": 7,
+      "question": "How do dictionaries work in Python?",
+      "answer": "A dictionary stores key-value pairs. Keys must be unique and immutable (strings, numbers, tuples). Create with curly braces `{}` or `dict()`. Access values with `dict[key]` or safely with `dict.get(key)`. Useful methods include `keys()`, `values()`, `items()`, `update()`, and `pop()`.",
+      "topic": "data-structures",
+      "difficulty": "beginner",
+      "code": "# Creating dictionaries\nperson = {\"name\": \"Alice\", \"age\": 25, \"city\": \"NYC\"}\n\n# Accessing\nprint(person[\"name\"])        # Alice\nprint(person.get(\"age\"))     # 25\nprint(person.get(\"job\", \"Unknown\"))  # Unknown (default)\n\n# Modifying\nperson[\"age\"] = 26\nperson[\"job\"] = \"Engineer\"\n\n# Iterating\nfor key, value in person.items():\n    print(f\"{key}: {value}\")\n\n# Check if key exists\nif \"name\" in person:\n    print(\"Name exists\")"
+    },
+    {
+      "id": 8,
+      "question": "What are sets in Python?",
+      "answer": "A set is an unordered collection of unique elements. Create with curly braces `{}` or `set()`. Sets automatically remove duplicates and support mathematical operations like union, intersection, difference, and symmetric difference. They're great for membership testing and removing duplicates from a collection.",
+      "topic": "data-structures",
+      "difficulty": "beginner",
+      "code": "# Creating sets\nnumbers = {1, 2, 3, 3, 2}   # {1, 2, 3} -- duplicates removed\nempty_set = set()            # NOT {} (that's a dict!)\n\n# Set operations\na = {1, 2, 3}\nb = {3, 4, 5}\n\na | b   # union: {1, 2, 3, 4, 5}\na & b   # intersection: {3}\na - b   # difference: {1, 2}\na ^ b   # symmetric difference: {1, 2, 4, 5}\n\n# Remove duplicates from a list\nnums = [1, 2, 2, 3, 3, 3]\nunique = list(set(nums))     # [1, 2, 3]"
+    },
+    {
+      "id": 9,
+      "question": "How do I use if elif and else in Python?",
+      "answer": "Python uses `if`, `elif` (else if), and `else` for conditional logic. Conditions are evaluated top-to-bottom; the first True condition's block runs. Indentation (typically 4 spaces) defines the block. Comparison operators: `==`, `!=`, `<`, `>`, `<=`, `>=`. Logical operators: `and`, `or`, `not`.",
+      "topic": "control-flow",
+      "difficulty": "beginner",
+      "code": "age = 20\n\nif age < 13:\n    print(\"Child\")\nelif age < 18:\n    print(\"Teenager\")\nelse:\n    print(\"Adult\")\n\n# Multiple conditions\nscore = 85\nif score >= 90 and score <= 100:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelse:\n    grade = \"C\"\n\n# Ternary (one-liner)\nstatus = \"pass\" if score >= 50 else \"fail\""
+    },
+    {
+      "id": 10,
+      "question": "How do for loops work in Python?",
+      "answer": "A `for` loop iterates over any iterable (list, string, dict, range, etc.). The syntax is `for item in iterable:`. Use `range(start, stop, step)` for numeric sequences. Loop control: `break` exits the loop, `continue` skips to the next iteration. An `else` clause runs if the loop completes without `break`.",
+      "topic": "control-flow",
+      "difficulty": "beginner",
+      "code": "# Iterate over a list\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n\n# range()\nfor i in range(5):        # 0, 1, 2, 3, 4\n    print(i)\n\nfor i in range(1, 6):     # 1, 2, 3, 4, 5\n    print(i)\n\nfor i in range(0, 10, 2): # 0, 2, 4, 6, 8\n    print(i)\n\n# Enumerate (index + value)\nfor i, fruit in enumerate(fruits):\n    print(f\"{i}: {fruit}\")\n\n# Break and continue\nfor n in range(10):\n    if n == 3:\n        continue   # skip 3\n    if n == 7:\n        break      # stop at 7\n    print(n)"
+    },
+    {
+      "id": 11,
+      "question": "How do while loops work in Python?",
+      "answer": "A `while` loop repeats as long as its condition is True. Be careful to update the condition inside the loop to avoid infinite loops. Use `break` to exit early and `continue` to skip iterations. `while` loops are useful when you don't know in advance how many iterations you need.",
+      "topic": "control-flow",
+      "difficulty": "beginner",
+      "code": "# Basic while loop\ncount = 0\nwhile count < 5:\n    print(count)\n    count += 1\n\n# With break\nwhile True:\n    user_input = input(\"Enter 'quit' to exit: \")\n    if user_input == \"quit\":\n        break\n    print(f\"You entered: {user_input}\")\n\n# With else (runs if no break)\nn = 0\nwhile n < 3:\n    print(n)\n    n += 1\nelse:\n    print(\"Loop completed!\")"
+    },
+    {
+      "id": 12,
+      "question": "What is a list comprehension?",
+      "answer": "A list comprehension is a concise way to create a new list by applying an expression to each item in an iterable, optionally filtering with a condition. Syntax: `[expression for item in iterable if condition]`. They're often faster and more readable than equivalent for loops with append.",
+      "topic": "control-flow",
+      "difficulty": "intermediate",
+      "code": "# Basic list comprehension\nsquares = [x**2 for x in range(5)]\n# [0, 1, 4, 9, 16]\n\n# With condition\nevens = [x for x in range(10) if x % 2 == 0]\n# [0, 2, 4, 6, 8]\n\n# From an existing list\nfruits = [\"apple\", \"banana\", \"cherry\"]\nupper = [f.upper() for f in fruits]\n# ['APPLE', 'BANANA', 'CHERRY']\n\n# Nested\npairs = [(x, y) for x in range(3) for y in range(3)]\n# [(0,0), (0,1), (0,2), (1,0), ...]\n\n# Equivalent for loop\nsquares = []\nfor x in range(5):\n    squares.append(x**2)"
+    },
+    {
+      "id": 13,
+      "question": "How do I define a function in Python?",
+      "answer": "Use the `def` keyword followed by the function name, parentheses with parameters, and a colon. The function body is indented. Use `return` to send a value back. Functions can have default parameter values, and Python supports *args (variable positional) and **kwargs (variable keyword) arguments.",
+      "topic": "functions",
+      "difficulty": "beginner",
+      "code": "# Basic function\ndef greet(name):\n    return f\"Hello, {name}!\"\n\nprint(greet(\"Alice\"))  # Hello, Alice!\n\n# Default parameters\ndef greet2(name=\"World\"):\n    return f\"Hello, {name}!\"\n\nprint(greet2())          # Hello, World!\nprint(greet2(\"Bob\"))    # Hello, Bob!\n\n# Multiple return values\ndef min_max(numbers):\n    return min(numbers), max(numbers)\n\nlow, high = min_max([3, 1, 4, 1, 5])\n\n# *args and **kwargs\ndef total(*numbers):\n    return sum(numbers)\n\nprint(total(1, 2, 3, 4))  # 10\n\ndef print_info(**details):\n    for key, value in details.items():\n        print(f\"{key}: {value}\")"
+    },
+    {
+      "id": 14,
+      "question": "What is the difference between arguments and parameters?",
+      "answer": "Parameters are the variables defined in the function signature (the placeholders). Arguments are the actual values passed to the function when calling it. For example, in `def add(a, b):`, `a` and `b` are parameters. In `add(3, 5)`, `3` and `5` are arguments. Positional arguments match by order; keyword arguments match by name.",
+      "topic": "functions",
+      "difficulty": "beginner",
+      "code": "# Parameters: a, b\ndef add(a, b):\n    return a + b\n\n# Arguments: 3, 5 (positional)\nresult = add(3, 5)\n\n# Arguments: a=3, b=5 (keyword)\nresult = add(a=3, b=5)\n\n# Mix (positional first, then keyword)\nresult = add(3, b=5)"
+    },
+    {
+      "id": 15,
+      "question": "What are lambda functions?",
+      "answer": "A lambda is a small anonymous function defined with the `lambda` keyword. Syntax: `lambda arguments: expression`. Lambdas can take any number of arguments but only have one expression. They're commonly used with `map()`, `filter()`, `sorted()`, and as short callbacks. For anything complex, use a regular `def` function.",
+      "topic": "functions",
+      "difficulty": "intermediate",
+      "code": "# Basic lambda\nadd = lambda a, b: a + b\nprint(add(3, 5))  # 8\n\n# With map()\nnumbers = [1, 2, 3]\nsquared = list(map(lambda x: x**2, numbers))\n# [1, 4, 9]\n\n# With filter()\neven = list(filter(lambda x: x % 2 == 0, numbers))\n# [2]\n\n# With sorted()\npairs = [(1, \"one\"), (3, \"three\"), (2, \"two\")]\nsorted_pairs = sorted(pairs, key=lambda x: x[0])\n# [(1, 'one'), (2, 'two'), (3, 'three')]\n\n# Equivalent def\ndef add(a, b):\n    return a + b"
+    },
+    {
+      "id": 16,
+      "question": "What are classes and objects in Python?",
+      "answer": "A class is a blueprint for creating objects. An object is an instance of a class. Define a class with the `class` keyword. The `__init__` method initializes new objects (like a constructor). `self` refers to the instance and is passed as the first parameter to every instance method. Classes support attributes (data) and methods (behavior).",
+      "topic": "oop",
+      "difficulty": "intermediate",
+      "code": "class Dog:\n    # Class attribute (shared by all instances)\n    species = \"Canis familiaris\"\n\n    def __init__(self, name, age):\n        # Instance attributes (unique per object)\n        self.name = name\n        self.age = age\n\n    def bark(self):\n        return f\"{self.name} says woof!\"\n\n    def human_age(self):\n        return self.age * 7\n\n# Creating objects\ndog1 = Dog(\"Buddy\", 3)\ndog2 = Dog(\"Milo\", 5)\n\nprint(dog1.name)         # Buddy\nprint(dog1.bark())       # Buddy says woof!\nprint(dog1.human_age())  # 21\nprint(Dog.species)       # Canis familiaris"
+    },
+    {
+      "id": 17,
+      "question": "What is inheritance in Python?",
+      "answer": "Inheritance lets a class (child/subclass) derive from another class (parent/superclass), inheriting its attributes and methods. The child can add new features or override parent methods. Use `super()` to call the parent's methods. Python supports multiple inheritance (a class can inherit from multiple parents).",
+      "topic": "oop",
+      "difficulty": "intermediate",
+      "code": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):\n        return f\"{self.name} says woof!\"\n\nclass Cat(Animal):\n    def speak(self):\n        return f\"{self.name} says meow!\"\n\n# Usage\ndog = Dog(\"Buddy\")\ncat = Cat(\"Whiskers\")\nprint(dog.speak())   # Buddy says woof!\nprint(cat.speak())   # Whiskers says meow!\n\n# super() usage\nclass Puppy(Dog):\n    def __init__(self, name, age):\n        super().__init__(name)\n        self.age = age"
+    },
+    {
+      "id": 18,
+      "question": "What is the __init__ method?",
+      "answer": "__init__ is a special method (constructor) that Python calls automatically when you create a new instance of a class. It initializes the object's attributes. It doesn't create the object -- `__new__` does that -- `__init__` just sets up the newly created object. It can take arguments beyond `self` to configure the instance.",
+      "topic": "oop",
+      "difficulty": "intermediate",
+      "code": "class Person:\n    def __init__(self, name, age):\n        self.name = name    # instance attribute\n        self.age = age\n\n    def introduce(self):\n        return f\"Hi, I'm {self.name}, {self.age} years old.\"\n\n# When you create an object, __init__ runs automatically\np = Person(\"Alice\", 25)\nprint(p.introduce())  # Hi, I'm Alice, 25 years old.\n\n# __init__ can have defaults\nclass Rectangle:\n    def __init__(self, width=1, height=1):\n        self.width = width\n        self.height = height\n\nr1 = Rectangle()        # 1x1\nr2 = Rectangle(5, 10)  # 5x10"
+    },
+    {
+      "id": 19,
+      "question": "What is the difference between self and cls?",
+      "answer": "`self` refers to a specific instance of a class and is used in instance methods. `cls` refers to the class itself and is used in class methods (decorated with `@classmethod`). Instance methods can access instance data; class methods can access class-level data but not instance-specific data. There are also static methods (`@staticmethod`) that don't receive either self or cls.",
+      "topic": "oop",
+      "difficulty": "intermediate",
+      "code": "class Counter:\n    total_count = 0  # class attribute\n\n    def __init__(self, name):\n        self.name = name       # instance attribute\n        self.id = Counter.total_count\n        Counter.total_count += 1\n\n    # Instance method -- needs self\n    def describe(self):\n        return f\"Counter {self.id}: {self.name}\"\n\n    # Class method -- needs cls\n    @classmethod\n    def get_total(cls):\n        return cls.total_count\n\n    # Static method -- neither self nor cls\n    @staticmethod\n    def is_valid_name(name):\n        return len(name) > 0\n\nc1 = Counter(\"A\")\nc2 = Counter(\"B\")\nprint(c1.describe())          # Counter 0: A\nprint(Counter.get_total())   # 2\nprint(Counter.is_valid_name(\"X\"))  # True"
+    },
+    {
+      "id": 20,
+      "question": "What is polymorphism in Python?",
+      "answer": "Polymorphism means 'many forms' -- the ability to use a common interface for different types. In Python, this works naturally through duck typing: if an object has the method you're calling, you can call it, regardless of the object's class. The same method name can behave differently on different objects. This makes code flexible and extensible.",
+      "topic": "oop",
+      "difficulty": "intermediate",
+      "code": "# Different classes, same interface\nclass Dog:\n    def speak(self):\n        return \"Woof!\"\n\nclass Cat:\n    def speak(self):\n        return \"Meow!\"\n\nclass Duck:\n    def speak(self):\n        return \"Quack!\"\n\n# Polymorphic function -- works with any object that has .speak()\ndef make_it_speak(animal):\n    print(animal.speak())\n\nmake_it_speak(Dog())   # Woof!\nmake_it_speak(Cat())   # Meow!\nmake_it_speak(Duck())  # Quack!\n\n# With a base class (formal polymorphism)\nfrom abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self):\n        pass\n\nclass Circle(Shape):\n    def __init__(self, r):\n        self.r = r\n    def area(self):\n        import math\n        return math.pi * self.r ** 2"
+    },
+    {
+      "id": 21,
+      "question": "How do I read from a file in Python?",
+      "answer": "Use the `open()` function with the file path and mode. The safest way is with a `with` statement (context manager), which automatically closes the file even if an error occurs. Common modes: `'r'` (read), `'w'` (write, overwrites), `'a'` (append), `'r+'` (read and write). For text files, you can specify encoding (e.g., `encoding='utf-8'`).",
+      "topic": "file-io",
+      "difficulty": "beginner",
+      "code": "# Reading a file (recommended way)\nwith open(\"data.txt\", \"r\", encoding=\"utf-8\") as f:\n    content = f.read()        # entire file as string\n    print(content)\n\n# Read line by line\nwith open(\"data.txt\", \"r\") as f:\n    for line in f:\n        print(line.strip())   # strip() removes newline\n\n# Read all lines into a list\nwith open(\"data.txt\", \"r\") as f:\n    lines = f.readlines()\n\n# Read a single line\nwith open(\"data.txt\", \"r\") as f:\n    first_line = f.readline()"
+    },
+    {
+      "id": 22,
+      "question": "How do I write to a file in Python?",
+      "answer": "Open the file with mode `'w'` to write (overwrites existing content) or `'a'` to append. Use the file object's `write()` method. Always use a `with` statement to ensure the file is properly closed. Add `\\n` for new lines. For writing multiple lines, use `writelines()` or loop with `write()`.",
+      "topic": "file-io",
+      "difficulty": "beginner",
+      "code": "# Write (overwrites)\nwith open(\"output.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"Hello, World!\\n\")\n    f.write(\"Second line\\n\")\n\n# Append\nwith open(\"output.txt\", \"a\") as f:\n    f.write(\"Appended line\\n\")\n\n# Write multiple lines\nlines = [\"line1\\n\", \"line2\\n\", \"line3\\n\"]\nwith open(\"output.txt\", \"w\") as f:\n    f.writelines(lines)\n\n# Write from a list comprehension\nwith open(\"squares.txt\", \"w\") as f:\n    f.writelines(f\"{x**2}\\n\" for x in range(10))"
+    },
+    {
+      "id": 23,
+      "question": "How do I work with CSV files in Python?",
+      "answer": "Use Python's built-in `csv` module. For reading, use `csv.reader()` (returns each row as a list) or `csv.DictReader()` (returns each row as a dictionary keyed by column headers). For writing, use `csv.writer()` or `csv.DictWriter()`. Always open with `newline=''` on Windows to avoid extra blank lines.",
+      "topic": "file-io",
+      "difficulty": "intermediate",
+      "code": "import csv\n\n# Reading CSV\nwith open(\"data.csv\", \"r\", newline=\"\", encoding=\"utf-8\") as f:\n    reader = csv.reader(f)\n    for row in reader:\n        print(row)  # each row is a list\n\n# Reading as dictionaries\nwith open(\"data.csv\", \"r\", newline=\"\") as f:\n    reader = csv.DictReader(f)\n    for row in reader:\n        print(row[\"name\"], row[\"age\"])\n\n# Writing CSV\nwith open(\"output.csv\", \"w\", newline=\"\", encoding=\"utf-8\") as f:\n    writer = csv.writer(f)\n    writer.writerow([\"Name\", \"Age\", \"City\"])\n    writer.writerow([\"Alice\", 25, \"NYC\"])\n    writer.writerow([\"Bob\", 30, \"LA\"])\n\n# Writing with DictWriter\nwith open(\"output.csv\", \"w\", newline=\"\") as f:\n    fieldnames = [\"Name\", \"Age\", \"City\"]\n    writer = csv.DictWriter(f, fieldnames=fieldnames)\n    writer.writeheader()\n    writer.writerow({\"Name\": \"Alice\", \"Age\": 25, \"City\": \"NYC\"})"
+    },
+    {
+      "id": 24,
+      "question": "What is the difference between deep copy and shallow copy?",
+      "answer": "A shallow copy creates a new object but inserts references to the original nested objects. A deep copy creates a new object and recursively copies all nested objects, so the copy is fully independent. Use `copy.copy()` for shallow and `copy.deepcopy()` for deep. For simple flat objects (like a list of integers), shallow copy is sufficient. For nested structures (list of lists, dicts with mutable values), use deep copy.",
+      "topic": "advanced",
+      "difficulty": "advanced",
+      "code": "import copy\n\noriginal = [[1, 2], [3, 4]]\n\n# Shallow copy\nshallow = copy.copy(original)\nshallow[0][0] = 99\nprint(original)  # [[99, 2], [3, 4]] -- original affected!\n\n# Deep copy\noriginal = [[1, 2], [3, 4]]\ndeep = copy.deepcopy(original)\ndeep[0][0] = 99\nprint(original)  # [[1, 2], [3, 4]] -- original unchanged\n\n# For flat lists, slicing creates a shallow copy (fine)\nnums = [1, 2, 3]\ncopy_nums = nums[:]  # or list(nums) or nums.copy()\ncopy_nums[0] = 99\nprint(nums)  # [1, 2, 3] -- unchanged (ints are immutable)"
+    },
+    {
+      "id": 25,
+      "question": "What are decorators in Python?",
+      "answer": "A decorator is a function that takes another function and extends its behavior without explicitly modifying it. Decorators are applied with the `@decorator_name` syntax above a function definition. They're widely used for logging, timing, authentication, memoization, and access control. A decorator returns a wrapper function that usually calls the original function.",
+      "topic": "advanced",
+      "difficulty": "advanced",
+      "code": "# Basic decorator\ndef my_decorator(func):\n    def wrapper():\n        print(\"Before the function runs\")\n        func()\n        print(\"After the function runs\")\n    return wrapper\n\n@my_decorator\ndef say_hello():\n    print(\"Hello!\")\n\nsay_hello()\n# Before the function runs\n# Hello!\n# After the function runs\n\n# Decorator with arguments\ndef repeat(times):\n    def decorator(func):\n        def wrapper(*args, **kwargs):\n            for _ in range(times):\n                func(*args, **kwargs)\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Alice\")\n# Hello, Alice!\n# Hello, Alice!\n# Hello, Alice!\n\n# Practical: timing decorator\nimport time\ndef timer(func):\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)\n        end = time.time()\n        print(f\"{func.__name__} took {end - start:.4f}s\")\n        return result\n    return wrapper"
+    },
+    {
+      "id": 26,
+      "question": "What are generators in Python?",
+      "answer": "A generator is a function that returns an iterator using the `yield` keyword instead of `return`. Each time `yield` is called, the function pauses and returns a value. The next call to `next()` resumes from where it left off. Generators are memory-efficient for large datasets because they produce items one at a time instead of loading everything into memory. You can also create generators with generator expressions: `(x for x in iterable)`.",
+      "topic": "advanced",
+      "difficulty": "advanced",
+      "code": "# Generator function\ndef count_up_to(max):\n    count = 1\n    while count <= max:\n        yield count\n        count += 1\n\n# Usage\nfor num in count_up_to(5):\n    print(num)  # 1, 2, 3, 4, 5\n\n# Manual iteration\ngen = count_up_to(3)\nprint(next(gen))  # 1\nprint(next(gen))  # 2\nprint(next(gen))  # 3\n# print(next(gen))  # StopIteration\n\n# Generator expression (like list comprehension but with parentheses)\nsquares = (x**2 for x in range(1000000))\nprint(next(squares))  # 0 -- only computes one at a time\n\n# Memory comparison\nimport sys\nlist_comp = [x**2 for x in range(100000)]\ngen_exp = (x**2 for x in range(100000))\nprint(sys.getsizeof(list_comp))  # large (~8MB+)\nprint(sys.getsizeof(gen_exp))    # tiny (~100 bytes)"
+    },
+    {
+      "id": 27,
+      "question": "What is the difference between range and xrange?",
+      "answer": "In Python 3, `xrange` was removed and `range` became a generator-like object (memory-efficient, produces items one at a time). In Python 2, `range()` returned a list (memory-heavy for large ranges) while `xrange()` returned an iterator. If you're using Python 3, just use `range()` -- it behaves like Python 2's `xrange()`. For most use cases, `range()` in Python 3 is what you want.",
+      "topic": "basics",
+      "difficulty": "beginner",
+      "code": "# Python 3 -- range is already efficient\nfor i in range(1000000):\n    pass  # doesn't create a million-element list\n\n# Check type\nprint(type(range(5)))  # <class 'range'>\n\n# Convert to list if you need all values at once\nnumbers = list(range(5))  # [0, 1, 2, 3, 4]\n\n# Python 2 legacy (for reference)\n# range(5)   -> [0, 1, 2, 3, 4]  (list, memory-heavy)\n# xrange(5)  -> xrange object     (iterator, memory-efficient)"
+    },
+    {
+      "id": 28,
+      "question": "How do I handle errors in Python?",
+      "answer": "Use `try`, `except`, `else`, and `finally` blocks. Put code that might raise an exception in `try`. Catch specific exceptions in `except` blocks (not bare `except:`). Code that runs only if no exception occurred goes in `else`. Cleanup code that always runs goes in `finally`. You can also raise your own exceptions with `raise`.",
+      "topic": "error-handling",
+      "difficulty": "beginner",
+      "code": "# Basic try/except\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero!\")\n\n# Multiple exceptions\ntry:\n    value = int(\"not_a_number\")\nexcept ValueError:\n    print(\"Invalid number format\")\nexcept TypeError:\n    print(\"Wrong type\")\n\n# Catch any exception (use sparingly)\ntry:\n    risky_operation()\nexcept Exception as e:\n    print(f\"Something went wrong: {e}\")\n\n# else and finally\ntry:\n    file = open(\"data.txt\", \"r\")\nexcept FileNotFoundError:\n    print(\"File not found\")\nelse:\n    print(\"File opened successfully\")\n    content = file.read()\nfinally:\n    file.close()  # always runs\n\n# Raising your own exception\ndef set_age(age):\n    if age < 0:\n        raise ValueError(\"Age cannot be negative\")\n    return age"
+    },
+    {
+      "id": 29,
+      "question": "What is a SyntaxError in Python?",
+      "answer": "A SyntaxError occurs when Python can't parse your code because it doesn't follow the language's grammar rules. Common causes: missing colons, mismatched parentheses/brackets, incorrect indentation, missing quotes, using a keyword as a variable name, or typos in statements. SyntaxErrors are caught before the program runs -- Python won't execute any of the code in the file if there's a syntax error.",
+      "topic": "error-handling",
+      "difficulty": "beginner",
+      "code": "# Common causes of SyntaxError:\n\n# 1. Missing colon\nif True\n    print(\"hi\")       # SyntaxError: expected ':'\n\n# 2. Mismatched parentheses\nprint(\"hello\"        # SyntaxError: unterminated string\n\n# 3. Incorrect indentation\ndef my_func():\nprint(\"hi\")          # SyntaxError: expected indented block\n\n# 4. Missing quotes\nprint(hello)          # NameError actually, but if it's:\nprint(\"hello)         # SyntaxError: unterminated string\n\n# Fixing:\nif True:               # added colon\n    print(\"hi\")\n\nprint(\"hello\")        # closed the quote\n\ndef my_func():\n    print(\"hi\")       # proper indentation"
+    },
+    {
+      "id": 30,
+      "question": "What is an IndentationError in Python?",
+      "answer": "An IndentationError occurs when Python's indentation rules are violated. Python uses indentation (not braces) to define code blocks, so inconsistent indentation breaks the parser. Common causes: mixing tabs and spaces, inconsistent indent levels within a block, or forgetting to indent after a colon. Python 3 forbids mixing tabs and spaces for indentation. The fix is to use consistent indentation (PEP 8 recommends 4 spaces per level) throughout your file.",
+      "topic": "error-handling",
+      "difficulty": "beginner",
+      "code": "# IndentationError examples:\n\n# 1. Inconsistent indentation\ndef my_func():\n    x = 1\n  y = 2          # IndentationError: unexpected indent\n\n# 2. Missing indentation after colon\nif True:\nprint(\"hi\")      # IndentationError: expected indented block\n\n# 3. Mixing tabs and spaces (subtle!)\ndef my_func():\n    x = 1        # 4 spaces\n\ty = 2        # 1 tab -- IndentationError in Python 3\n\n# Fix: Be consistent (PEP 8: 4 spaces per level)\ndef my_func():\n    x = 1\n    y = 2\n\nif True:\n    print(\"hi\")"
+    },
+    {
+      "id": 31,
+      "question": "What is a NameError in Python?",
+      "answer": "A NameError occurs when you try to use a variable or name that hasn't been defined yet. Common causes: typo in a variable name, using a variable before assigning it, forgetting to import a module, or using a function/variable from a scope you don't have access to. The error message tells you which name is not defined, which usually points directly to the typo or missing definition.",
+      "topic": "error-handling",
+      "difficulty": "beginner",
+      "code": "# NameError examples:\n\n# 1. Typo\nname = \"Alice\"\nprint(nmae)       # NameError: name 'nmae' is not defined\n\n# 2. Using before defining\nprint(age)        # NameError: name 'age' is not defined\nage = 25\n\n# 3. Forgetting to import\nprint(math.pi)    # NameError: name 'math' is not defined\n\n# Fixes:\nprint(name)       # correct spelling\n\nage = 25\nprint(age)        # define first, then use\n\nimport math\nprint(math.pi)    # import the module\n\n# Tip: The error message tells you exactly what name is missing\n# NameError: name 'nmae' is not defined  -> look for 'nmae' in your code"
+    },
+    {
+      "id": 32,
+      "question": "What is a TypeError in Python?",
+      "answer": "A TypeError occurs when an operation is performed on an inappropriate type. Common causes: adding a string to an integer, calling a non-callable object, passing wrong number of arguments to a function, or trying to iterate over a non-iterable. The error message usually tells you what operation failed and what types were involved, making it straightforward to fix.",
+      "topic": "error-handling",
+      "difficulty": "beginner",
+      "code": "# TypeError examples:\n\n# 1. Operation on wrong types\nresult = \"5\" + 3        # TypeError: can't concat str to int\nresult = \"5\" * \"3\"     # TypeError: can't multiply sequence by non-int\n\n# 2. Wrong number of arguments\ndef add(a, b):\n    return a + b\n\nadd(5)                  # TypeError: add() missing 1 required argument\nadd(1, 2, 3)            # TypeError: add() takes 2 positional arguments\n\n# 3. Non-callable\nx = 42\nx()                     # TypeError: 'int' object is not callable\n\n# Fixes:\nresult = int(\"5\") + 3   # convert to int: 8\nresult = \"5\" + \"3\"      # both strings: \"53\"\nresult = \"5\" * 3        # repeat string: \"555\"\n\nadd(5, 3)               # correct number of args\n\n# Tip: Read the error message -- it tells you the types involved"
+    },
+    {
+      "id": 33,
+      "question": "What is a ValueError in Python?",
+      "answer": "A ValueError occurs when a function receives the correct type of argument but an inappropriate value. For example, converting \"abc\" to an integer with `int()` raises ValueError because \"abc\" is a string (correct type) but not a valid number (bad value). Common in type conversions, list operations like `.remove()` on a value that isn't in the list, and functions that validate input values.",
+      "topic": "error-handling",
+      "difficulty": "beginner",
+      "code": "# ValueError examples:\n\n# 1. Invalid conversion\nint(\"abc\")              # ValueError: invalid literal for int()\nfloat(\"not_a_number\")  # ValueError: could not convert string to float\n\n# 2. Value not found\nnumbers = [1, 2, 3]\nnumbers.remove(99)      # ValueError: list.remove(x): x not in list\n\n# 3. Invalid argument value\nchr(999999)             # ValueError: chr() arg not in range(0x110000)\n\n# Fixes:\n# Validate before converting\ntext = \"abc\"\nif text.isdigit():\n    num = int(text)\nelse:\n    print(\"Not a valid number\")\n\n# Use try/except\ntry:\n    num = int(\"abc\")\nexcept ValueError:\n    print(\"Conversion failed\")"
+    },
+    {
+      "id": 34,
+      "question": "What is a KeyError in Python?",
+      "answer": "A KeyError occurs when you try to access a dictionary key that doesn't exist. This happens with `dict[key]` syntax when the key is missing. To avoid KeyError, use `dict.get(key)` (returns None or a default), check with `if key in dict`, or use `dict.setdefault()`. KeyError is specific to dictionaries (and some mapping types).",
+      "topic": "error-handling",
+      "difficulty": "beginner",
+      "code": "# KeyError examples:\n\ndata = {\"name\": \"Alice\", \"age\": 25}\n\ndata[\"job\"]              # KeyError: 'job'\n\n# Safe alternatives:\n\n# 1. get() with default\njob = data.get(\"job\", \"Unknown\")\nprint(job)               # Unknown\n\n# 2. Check before access\nif \"job\" in data:\n    print(data[\"job\"])\nelse:\n    print(\"Key not found\")\n\n# 3. setdefault (adds the key if missing)\njob = data.setdefault(\"job\", \"Engineer\")\nprint(data)              # {'name': 'Alice', 'age': 25, 'job': 'Engineer'}\n\n# 4. try/except\ntry:\n    print(data[\"job\"])\nexcept KeyError:\n    print(\"Key not found\")"
+    },
+    {
+      "id": 35,
+      "question": "How do I use modules and import in Python?",
+      "answer": "A module is a Python file (`.py`) containing functions, classes, and variables. Import it with the `import` statement. You can import a whole module (`import math`), specific items (`from math import pi, sqrt`), or everything (`from math import *` -- not recommended). You can also import with an alias (`import numpy as np`). Python's standard library has many built-in modules; third-party modules are installed with `pip`.",
+      "topic": "modules",
+      "difficulty": "beginner",
+      "code": "# Importing a whole module\nimport math\nprint(math.pi)           # 3.14159...\nprint(math.sqrt(16))     # 4.0\n\n# Importing specific items\nfrom math import pi, sqrt\nprint(pi)                # 3.14159...\nprint(sqrt(16))          # 4.0\n\n# Importing with alias\nimport datetime as dt\nnow = dt.datetime.now()\n\n# Importing your own module\n# If you have helper.py in the same directory:\n# import helper\n# from helper import my_function\n\n# Standard library examples\nimport os\nprint(os.getcwd())       # current directory\n\nimport random\nprint(random.randint(1, 10))  # random int 1-10\n\nimport json\ndata = json.loads('{\"key\": \"value\"}')"
+    },
+    {
+      "id": 36,
+      "question": "What is pip and how do I use it?",
+      "answer": "pip is Python's package installer. It installs packages from the Python Package Index (PyPI) and other indexes. Common commands: `pip install package_name` (install), `pip uninstall package_name` (remove), `pip list` (list installed), `pip freeze` (list pinned versions), `pip install -r requirements.txt` (install from file), `pip show package_name` (package info). Always use a virtual environment to avoid conflicts between projects.",
+      "topic": "modules",
+      "difficulty": "beginner",
+      "code": "# Install a package\npip install requests\n\n# Install specific version\npip install requests==2.31.0\n\n# Install from requirements.txt\npip install -r requirements.txt\n\n# List installed packages\npip list\n\n# Show package details\npip show requests\n\n# Upgrade a package\npip install --upgrade requests\n\n# Uninstall\npip uninstall requests\n\n# Using a package after install\nimport requests\nresponse = requests.get(\"https://api.github.com\")\nprint(response.status_code)"
+    },
+    {
+      "id": 37,
+      "question": "How do I manage virtual environments in Python?",
+      "answer": "A virtual environment isolates a project's dependencies from the system Python. Create one with `python -m venv venv` (or `python3 -m venv venv`). Activate it: `venv\\Scripts\\activate` on Windows, `source venv/bin/activate` on macOS/Linux. Deactivate with `deactivate`. Install packages inside the environment with pip. This keeps project dependencies isolated and reproducible. Add a `requirements.txt` with `pip freeze > requirements.txt` for sharing.",
+      "topic": "modules",
+      "difficulty": "beginner",
+      "code": "# Create a virtual environment\npython -m venv myenv\n\n# Activate (Windows)\nmyenv\\Scripts\\activate\n\n# Activate (macOS/Linux)\nsource myenv/bin/activate\n\n# Verify (should show venv path)\nwhich python     # macOS/Linux\nwhere python     # Windows\n\n# Install packages (inside venv)\npip install flask\n\n# Freeze dependencies\npip freeze > requirements.txt\n\n# Deactivate\ndeactivate\n\n# Recreate from requirements.txt\npython -m venv newenv\nsource newenv/bin/activate\npip install -r requirements.txt"
+    },
+    {
+      "id": 38,
+      "question": "What are Python's built-in functions?",
+      "answer": "Python comes with many built-in functions available without importing anything. Common ones: `print()`, `len()`, `type()`, `int()`, `float()`, `str()`, `list()`, `dict()`, `range()`, `enumerate()`, `zip()`, `map()`, `filter()`, `sorted()`, `sum()`, `min()`, `max()`, `abs()`, `round()`, `input()`, `open()`, `isinstance()`, `hasattr()`, `getattr()`, `setattr()`, `format()`, and `help()`. These cover everyday operations from printing to type conversion to iteration.",
+      "topic": "basics",
+      "difficulty": "beginner",
+      "code": "# Common built-in functions\nprint(\"hello\")              # output\nlen([1, 2, 3])              # 3 -- length\ntype(42)                    # <class 'int'>\n\nint(\"42\")                  # 42 -- string to int\nfloat(\"3.14\")              # 3.14\nstr(42)                     # \"42\"\n\nlist((1, 2))                # [1, 2]\ndict(a=1)                   # {'a': 1}\n\nrange(5)                    # range(0, 5)\nlist(range(5))              # [0, 1, 2, 3, 4]\n\nenumerate([\"a\", \"b\"])      # (0, 'a'), (1, 'b')\n\nzip([1, 2], [\"a\", \"b\"])    # (1, 'a'), (2, 'b')\n\nsorted([3, 1, 2])           # [1, 2, 3]\nsum([1, 2, 3])              # 6\nmin([3, 1, 2])              # 1\nmax([3, 1, 2])              # 3\n\nabs(-5)                     # 5\nround(3.14159, 2)          # 3.14\n\nisinstance(42, int)         # True\nhelp(print)                 # show documentation"
+    },
+    {
+      "id": 39,
+      "question": "How do strings work in Python?",
+      "answer": "Strings are immutable sequences of Unicode characters. Create with single, double, or triple quotes. Python provides many string methods: `upper()`, `lower()`, `strip()`, `split()`, `join()`, `replace()`, `find()`, `startswith()`, `endswith()`, `format()`, and f-strings (Python 3.6+). Strings support indexing, slicing, and concatenation. Since they're immutable, methods return new strings rather than modifying the original.",
+      "topic": "basics",
+      "difficulty": "beginner",
+      "code": "# Creating strings\ns1 = 'hello'\ns2 = \"world\"\ns3 = \"\"\"multi-line\nstring\"\"\"\n\n# Indexing and slicing\ns = \"Python\"\nprint(s[0])      # P\nprint(s[-1])     # n\nprint(s[1:4])    # yth\n\n# Common methods\ns = \"  Hello World  \"\nprint(s.strip())     # \"Hello World\"\nprint(s.lower())     # \"  hello world  \"\nprint(s.upper())     # \"  HELLO WORLD  \"\n\ns = \"apple,banana,cherry\"\nprint(s.split(\",\"))  # ['apple', 'banana', 'cherry']\n\nwords = [\"hello\", \"world\"]\nprint(\" \".join(words))  # \"hello world\"\n\nprint(s.replace(\"apple\", \"orange\"))  # \"orange,banana,cherry\"\n\n# F-strings (Python 3.6+)\nname = \"Alice\"\nage = 25\nprint(f\"{name} is {age} years old\")  # Alice is 25 years old\nprint(f\"Next year: {age + 1}\")        # Next year: 26\n\n# Find and check\ns = \"hello world\"\nprint(s.find(\"world\"))     # 6\nprint(s.startswith(\"hello\"))  # True\nprint(s.endswith(\"world\"))    # True"
+    },
+    {
+      "id": 40,
+      "question": "What is the difference between == and is in Python?",
+      "answer": "`==` checks for value equality -- whether two objects have the same value. `is` checks for identity -- whether two variables point to the exact same object in memory. For most cases, use `==` to compare values. Use `is` primarily to check against `None` (e.g., `if x is None`). Small integers and short strings may be interned (cached), so `is` might return True for equal values, but this is an implementation detail and not guaranteed.",
+      "topic": "advanced",
+      "difficulty": "intermediate",
+      "code": "# == checks value equality\na = [1, 2, 3]\nb = [1, 2, 3]\nprint(a == b)   # True -- same values\nprint(a is b)   # False -- different objects in memory\n\n# is checks identity\na = [1, 2, 3]\nb = a\nprint(a is b)   # True -- same object\n\n# Use is for None checks (idiomatic)\nname = None\nif name is None:\n    print(\"No name set\")\n\n# Numbers and strings can be tricky\nx = 256\ny = 256\nprint(x is y)   # True (small integers cached)\n\nx = 257\ny = 257\nprint(x is y)   # False or True depending on context -- don't rely on this!\n\n# Best practice: use == for values, is for None\nif value == 0:\n    ...\nif result is None:\n    ..."
+    },
+    {
+      "id": 41,
+      "question": "How do I sort a list in Python?",
+      "answer": "Use `list.sort()` to sort a list in place (modifies the original) or `sorted()` to get a new sorted list without modifying the original. Both accept `reverse=True` for descending order and `key` for custom sorting. The `key` parameter takes a function that extracts a comparison value from each element. For complex sorting, `key` is very powerful.",
+      "topic": "control-flow",
+      "difficulty": "intermediate",
+      "code": "# In-place sort (modifies original)\nnumbers = [3, 1, 4, 1, 5]\nnumbers.sort()\nprint(numbers)  # [1, 1, 3, 4, 5]\n\n# sorted() returns a new list\nnumbers = [3, 1, 4, 1, 5]\nsorted_nums = sorted(numbers)\nprint(sorted_nums)  # [1, 1, 3, 4, 5]\nprint(numbers)      # [3, 1, 4, 1, 5] -- unchanged\n\n# Descending\nnumbers.sort(reverse=True)\nprint(numbers)  # [5, 4, 3, 1, 1]\n\n# Custom key: sort by string length\nwords = [\"python\", \"hi\", \"programming\"]\nwords.sort(key=len)\nprint(words)  # ['hi', 'python', 'programming']\n\n# Sort list of dicts by a field\npeople = [{\"name\": \"Alice\", \"age\": 30},\n          {\"name\": \"Bob\", \"age\": 25},\n          {\"name\": \"Charlie\", \"age\": 35}]\npeople.sort(key=lambda p: p[\"age\"])\nprint(people)  # Bob (25), Alice (30), Charlie (35)"
+    },
+    {
+      "id": 42,
+      "question": "What are Python's magic methods (dunder methods)?",
+      "answer": "Magic methods (or dunder methods, short for 'double underscore') are special methods with names like `__init__`, `__str__`, `__repr__`, `__add__`, `__len__`, `__getitem__`, `__setitem__`, `__call__`, and `__eq__`. They let your custom classes integrate with Python's built-in operations. For example, defining `__str__` controls what `str(obj)` and `print(obj)` show; defining `__add__` lets you use `+` on your objects; defining `__len__` lets you use `len()` on your objects.",
+      "topic": "oop",
+      "difficulty": "advanced",
+      "code": "class Book:\n    def __init__(self, title, pages):\n        self.title = title\n        self.pages = pages\n\n    def __str__(self):\n        # What print() and str() show\n        return f\"'{self.title}' ({self.pages} pages)\"\n\n    def __repr__(self):\n        # What the REPL shows (developer-focused)\n        return f\"Book('{self.title}', {self.pages})\"\n\n    def __len__(self):\n        # What len() returns\n        return self.pages\n\n    def __eq__(self, other):\n        # What == does\n        if isinstance(other, Book):\n            return self.title == other.title\n        return False\n\n    def __add__(self, other):\n        # What + does\n        if isinstance(other, Book):\n            return Book(f\"{self.title} & {other.title}\",\n                        self.pages + other.pages)\n\nb1 = Book(\"Python 101\", 200)\nb2 = Book(\"Advanced Python\", 300)\n\nprint(b1)            # 'Python 101' (200 pages)\nprint(repr(b1))      # Book('Python 101', 200)\nprint(len(b1))       # 200\nprint(b1 == b2)      # False\ncombined = b1 + b2\nprint(combined)      # 'Python 101 & Advanced Python' (500 pages)"
+    },
+    {
+      "id": 43,
+      "question": "What is the Python Standard Library?",
+      "answer": "The Python Standard Library is a collection of modules and packages that come bundled with Python, requiring no additional installation. It covers everything from file I/O (`os`, `shutil`, `pathlib`), data formats (`json`, `csv`, `xml`), networking (`socket`, `http`), concurrency (`threading`, `multiprocessing`, `asyncio`), data structures (`collections`, `heapq`, `bisect`), text processing (`re`, `string`), math (`math`, `random`, `decimal`), dates and times (`datetime`, `time`), and many more. It's one of Python's biggest strengths -- 'batteries included'.",
+      "topic": "modules",
+      "difficulty": "intermediate",
+      "code": "# Useful standard library modules\nimport os              # file system, paths, environment variables\nimport sys             # Python runtime information, exit()\nimport json            # JSON encoding/decoding\nimport csv             # CSV file handling\nimport datetime        # dates and times\nimport random          # random numbers, choices, shuffles\nimport math            # mathematical functions\nimport re              # regular expressions\nimport collections     # specialized container datatypes\nimport pathlib         # object-oriented path handling\nimport itertools       # iterator functions\nimport functools       # higher-order functions (reduce, cached_property)\nimport logging         # logging facility\nimport hashlib         # secure hashes (md5, sha256)\n\n# collections examples\nfrom collections import Counter, defaultdict, deque\ncnt = Counter([1, 2, 2, 3, 3, 3])\nprint(cnt)  # Counter({3: 3, 2: 2, 1: 1})\n\ndd = defaultdict(list)\ndd[\"key\"].append(1)  # no KeyError -- auto-creates empty list\n\n# pathlib example\nfrom pathlib import Path\np = Path(\".\") / \"data.txt\"\nprint(p.exists())"
+    },
+    {
+      "id": 44,
+      "question": "How do I use regular expressions in Python?",
+      "answer": "Use the `re` module for pattern matching with regular expressions. Key functions: `re.search()` (find first match), `re.match()` (match at start), `re.findall()` (find all matches), `re.finditer()` (iterator of matches), `re.sub()` (substitute matches), `re.split()` (split by pattern). Compile patterns with `re.compile()` for reuse. Common patterns: `\\d` (digit), `\\w` (word char), `\\s` (whitespace), `.` (any char), `*` (0+), `+` (1+), `?` (0 or 1), `[]` (character class), `^` (start), `$` (end).",
+      "topic": "advanced",
+      "difficulty": "advanced",
+      "code": "import re\n\ntext = \"Contact us at support@example.com or sales@company.org\"\n\n# Search for an email pattern\npattern = r\"[\\w\\.-]+@[\\w\\.-]+\\.\\w+\"\n\nmatch = re.search(pattern, text)\nif match:\n    print(match.group())  # support@example.com\n\n# Find all emails\nemails = re.findall(pattern, text)\nprint(emails)  # ['support@example.com', 'sales@company.org']\n\n# Substitute\ncleaned = re.sub(r\"\\s+\", \" \", \"too   many   spaces\")\nprint(cleaned)  # \"too many spaces\"\n\n# Split\nparts = re.split(r\"[,\\s]+\", \"apple, banana  cherry\")\nprint(parts)  # ['apple', 'banana', 'cherry']\n\n# Compile for reuse\nphone_pattern = re.compile(r\"\\d{3}-\\d{3}-\\d{4}\")\nmatches = phone_pattern.findall(\"Call 555-123-4567 or 555-987-6543\")\nprint(matches)  # ['555-123-4567', '555-987-6543']\n\n# Groups\ndate_pattern = re.compile(r\"(\\d{4})-(\\d{2})-(\\d{2})\")\nm = date_pattern.search(\"Date: 2024-01-15\")\nif m:\n    print(m.groups())     # ('2024', '01', '15')\n    print(m.group(1))    # 2024 (year)"
+    },
+    {
+      "id": 45,
+      "question": "What is the difference between append and extend in Python lists?",
+      "answer": "`append()` adds a single element to the end of a list. `extend()` adds each element from an iterable to the end of the list (unpacks the iterable). If you `append` a list, you get a nested list. If you `extend` a list, its elements are added individually. `append` takes one argument; `extend` takes an iterable.",
+      "topic": "data-structures",
+      "difficulty": "beginner",
+      "code": "numbers = [1, 2, 3]\n\n# append -- adds one element (even if it's a list)\nnumbers.append(4)\nprint(numbers)  # [1, 2, 3, 4]\n\nnumbers.append([5, 6])\nprint(numbers)  # [1, 2, 3, 4, [5, 6]] -- nested list!\n\n# reset\nnumbers = [1, 2, 3]\n\n# extend -- unpacks the iterable\nnumbers.extend([4, 5])\nprint(numbers)  # [1, 2, 3, 4, 5] -- flat!\n\nnumbers.extend(\"ab\")\nprint(numbers)  # [1, 2, 3, 4, 5, 'a', 'b']\n\n# Equivalent alternatives\nnumbers = [1, 2, 3]\nnumbers += [4, 5]       # same as extend\nnumbers = [1, 2, 3]\nnumbers = numbers + [4, 5]  # creates a new list (different from extend)"
+    },
+    {
+      "id": 46,
+      "question": "What is the difference between break continue and pass in Python?",
+      "answer": "`break` exits the innermost loop immediately. `continue` skips the rest of the current iteration and jumps to the next iteration. `pass` is a no-op placeholder that does nothing -- it's used when syntax requires a statement but you don't want any action (e.g., an empty function body, class, or conditional branch). `break` and `continue` affect loop flow; `pass` is just a syntactic placeholder.",
+      "topic": "control-flow",
+      "difficulty": "beginner",
+      "code": "# break -- exit loop entirely\nfor i in range(10):\n    if i == 5:\n        break\n    print(i)  # prints 0, 1, 2, 3, 4\n\n# continue -- skip to next iteration\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i)  # prints 0, 1, 3, 4 (skips 2)\n\n# pass -- do nothing (placeholder)\ndef my_function():\n    pass  # TODO: implement later\n\nclass MyClass:\n    pass  # TODO: add methods later\n\nif True:\n    pass  # syntactically needed but no action"
+    },
+    {
+      "id": 47,
+      "question": "How do I check the type of an object in Python?",
+      "answer": "Use `type(obj)` to get the exact type of an object, and `isinstance(obj, Class)` to check if an object is an instance of a class or its subclasses. `isinstance()` is generally preferred over `type()` for type checking because it respects inheritance. You can also check against multiple types with `isinstance(obj, (int, float))`. Use `type()` mainly for debugging or when you need the exact type.",
+      "topic": "advanced",
+      "difficulty": "intermediate",
+      "code": "# type() -- exact type\nprint(type(42))           # <class 'int'>\nprint(type(\"hello\"))     # <class 'str'>\nprint(type([1, 2]))       # <class 'list'>\n\n# isinstance() -- preferred for checking\nprint(isinstance(42, int))        # True\nprint(isinstance(42, float))      # False\nprint(isinstance(42, (int, float)))  # True (multiple types)\n\n# isinstance respects inheritance\nclass Animal:\n    pass\nclass Dog(Animal):\n    pass\n\nd = Dog()\nprint(isinstance(d, Dog))     # True\nprint(isinstance(d, Animal))  # True -- Dog IS an Animal\nprint(type(d) == Animal)      # False -- exact type is Dog, not Animal\n\n# Use isinstance in function validation\ndef process(value):\n    if isinstance(value, (int, float)):\n        return value * 2\n    elif isinstance(value, str):\n        return value.upper()\n    else:\n        raise TypeError(f\"Unsupported type: {type(value)}\")"
+    },
+    {
+      "id": 48,
+      "question": "What is the Python GIL (Global Interpreter Lock)?",
+      "answer": "The GIL is a mutex (lock) in CPython (the standard Python implementation) that allows only one thread to execute Python bytecode at a time, even on multi-core machines. This means CPU-bound multi-threaded Python programs don't get true parallelism from threading. The GIL exists mainly for memory management simplicity (reference counting). For CPU-bound tasks, use `multiprocessing` (separate processes, each with its own GIL) or `asyncio` for I/O-bound tasks. Note: the GIL only affects CPython; other implementations like Jython and IronPython don't have it. Python 3.13+ has experimental free-threaded builds.",
+      "topic": "advanced",
+      "difficulty": "advanced",
+      "code": "# Threading is limited by GIL for CPU-bound tasks\nimport threading\nimport time\n\ndef cpu_task(n):\n    return sum(i * i for i in range(n))\n\n# With threads (GIL limits parallelism for CPU work)\nstart = time.time()\nt1 = threading.Thread(target=cpu_task, args=(10_000_000,))\nt2 = threading.Thread(target=cpu_task, args=(10_000_000,))\nt1.start(); t2.start()\nt1.join(); t2.join()\nprint(f\"Threads: {time.time() - start:.2f}s\")  # may not be faster\n\n# With multiprocessing (bypasses GIL)\nfrom multiprocessing import Process\nstart = time.time()\np1 = Process(target=cpu_task, args=(10_000_000,))\np2 = Process(target=cpu_task, args=(10_000_000,))\np1.start(); p2.start()\np1.join(); p2.join()\nprint(f\"Processes: {time.time() - start:.2f}s\")  # true parallelism\n\n# For I/O-bound tasks, threading is fine\nimport requests\ndef fetch(url):\n    return requests.get(url)\n# Threads work well here -- GIL is released during I/O"
+    },
+    {
+      "id": 49,
+      "question": "How do I use *args and **kwargs in Python?",
+      "answer": "`*args` collects extra positional arguments into a tuple. `**kwargs` collects extra keyword arguments into a dictionary. They let functions accept a variable number of arguments. Use `*args` when you don't know how many positional arguments will be passed; use `**kwargs` for variable keyword arguments. You can also use `*` and `**` when calling functions to unpack lists/dicts into arguments.",
+      "topic": "functions",
+      "difficulty": "intermediate",
+      "code": "# Function accepting *args\ndef total(*numbers):\n    return sum(numbers)\n\nprint(total(1, 2, 3))       # 6\nprint(total(10, 20, 30, 40))  # 100\nprint(total())              # 0\n\n# Function accepting **kwargs\ndef print_info(**details):\n    for key, value in details.items():\n        print(f\"{key}: {value}\")\n\nprint_info(name=\"Alice\", age=25, city=\"NYC\")\n# name: Alice\n# age: 25\n# city: NYC\n\n# Both together\ndef flexible(*args, **kwargs):\n    print(f\"Positional: {args}\")\n    print(f\"Keyword: {kwargs}\")\n\nflexible(1, 2, 3, name=\"Bob\", active=True)\n# Positional: (1, 2, 3)\n# Keyword: {'name': 'Bob', 'active': True}\n\n# Unpacking when calling\ndef greet(greeting, name):\n    print(f\"{greeting}, {name}!\")\n\nargs = [\"Hello\", \"Alice\"]\ngreet(*args)              # greet(\"Hello\", \"Alice\")\n\nkwargs = {\"greeting\": \"Hi\", \"name\": \"Bob\"}\ngreet(**kwargs)           # greet(greeting=\"Hi\", name=\"Bob\")"
+    },
+    {
+      "id": 50,
+      "question": "What is the Pythonic way to write code?",
+      "answer": "Pythonic code follows the idioms and conventions of the Python community, as captured in PEP 20 (The Zen of Python: 'Beautiful is better than ugly', 'Simple is better than complex', 'Readability counts'). Key principles: use list comprehensions over manual loops, use `with` for resource management, use `enumerate()` instead of `range(len())`, use f-strings for formatting, use `if x is None` instead of `if x == None`, use context managers, keep functions small and focused, use descriptive names, and write code that's clear and readable rather than clever. Run `import this` to see the Zen of Python.",
+      "topic": "basics",
+      "difficulty": "intermediate",
+      "code": "# Unpythonic vs Pythonic\n\n# 1. Looping with index\n# Unpythonic\nfor i in range(len(items)):\n    print(items[i])\n\n# Pythonic\nfor item in items:\n    print(item)\n\n# With index when needed\nfor i, item in enumerate(items):\n    print(f\"{i}: {item}\")\n\n# 2. Building a list\n# Unpythonic\nresult = []\nfor x in range(10):\n    if x % 2 == 0:\n        result.append(x**2)\n\n# Pythonic\nresult = [x**2 for x in range(10) if x % 2 == 0]\n\n# 3. None checks\n# Unpythonic\nif value == None:\n    ...\n\n# Pythonic\nif value is None:\n    ...\n\n# 4. Resource management\n# Unpythonic\nf = open(\"file.txt\")\ndata = f.read()\nf.close()\n\n# Pythonic\nwith open(\"file.txt\") as f:\n    data = f.read()\n\n# 5. String formatting\n# Old\n\"Hello, %s! You are %d years old.\" % (name, age)\n\n# Pythonic (f-strings)\nf\"Hello, {name}! You are {age} years old.\"\n\n# Zen of Python\nimport this"
+    }
+  ],
+  "synonyms": {
+    "python": [
+      "python3",
+      "programming language",
+      "python",
+      "cpython",
+      "py"
+    ],
+    "install": [
+      "install",
+      "get python",
+      "download python",
+      "installation",
+      "setup python",
+      "setup"
+    ],
+    "list": [
+      "collections",
+      "arrays",
+      "array",
+      "collection",
+      "list",
+      "lists"
+    ],
+    "tuple": [
+      "tuples",
+      "tuple"
+    ],
+    "dictionary": [
+      "hash map",
+      "dictionary",
+      "hashmap",
+      "dicts",
+      "dict",
+      "key-value",
+      "key-value pair",
+      "key value"
+    ],
+    "set": [
+      "set",
+      "sets"
+    ],
+    "function": [
+      "methods",
+      "def",
+      "function",
+      "functions",
+      "create a function",
+      "define function",
+      "method",
+      "create function"
+    ],
+    "class": [
+      "object",
+      "object-oriented",
+      "objects",
+      "classes",
+      "class",
+      "oop",
+      "class in python",
+      "object oriented"
+    ],
+    "loop": [
+      "loops",
+      "for loops",
+      "while loops",
+      "iteration",
+      "loop",
+      "while loop",
+      "iterate",
+      "iterating",
+      "for loop"
+    ],
+    "file": [
+      "file i o",
+      "file io",
+      "write file",
+      "read file",
+      "file handling",
+      "file",
+      "files",
+      "open file"
+    ],
+    "error": [
+      "errors",
+      "fix error",
+      "error",
+      "exception",
+      "bug",
+      "debugging",
+      "exceptions",
+      "bugs",
+      "debug"
+    ],
+    "decorator": [
+      "decorator",
+      "@",
+      "decorators"
+    ],
+    "generator": [
+      "generators",
+      "generator",
+      "yields",
+      "yield"
+    ],
+    "sort": [
+      "arrange in order",
+      "arrange",
+      "sorted",
+      "order",
+      "sort",
+      "sorting"
+    ],
+    "string": [
+      "str",
+      "text",
+      "string",
+      "strings",
+      "string methods"
+    ],
+    "import": [
+      "library",
+      "module",
+      "third party",
+      "libraries",
+      "modules",
+      "import",
+      "third-party",
+      "package",
+      "pip",
+      "packages"
+    ],
+    "variable": [
+      "declare",
+      "assign",
+      "variable",
+      "variables",
+      "assignment"
+    ],
+    "print": [
+      "output",
+      "print",
+      "show",
+      "console",
+      "display"
+    ],
+    "convert": [
+      "type cast",
+      "type conversion",
+      "cast",
+      "convert",
+      "conversion",
+      "casting"
+    ],
+    "copy": [
+      "duplicate",
+      "clone",
+      "copy",
+      "duplicate list",
+      "copy list"
+    ],
+    "reverse": [
+      "reverse",
+      "backward",
+      "invert",
+      "flip"
+    ],
+    "remove": [
+      "pop",
+      "remove item",
+      "delete item",
+      "delete",
+      "remove",
+      "erase"
+    ],
+    "add": [
+      "add item",
+      "append",
+      "add",
+      "push",
+      "insert"
+    ],
+    "change": [
+      "change",
+      "update",
+      "modify",
+      "edit",
+      "alter"
+    ],
+    "check": [
+      "test if",
+      "validate",
+      "see if",
+      "verify",
+      "test",
+      "check"
+    ],
+    "create": [
+      "declare",
+      "define",
+      "create",
+      "make",
+      "build"
+    ],
+    "use": [
+      "help me",
+      "how to",
+      "how can i",
+      "how do i",
+      "use"
+    ],
+    "what is": [
+      "tell me about",
+      "define",
+      "meaning",
+      "definition",
+      "explain",
+      "what is",
+      "explain what",
+      "explain to me"
+    ],
+    "how to": [
+      "how to",
+      "tutorial",
+      "how can i",
+      "show me",
+      "how do i",
+      "help me"
+    ],
+    "difference": [
+      "compared to",
+      "differ",
+      "comparison",
+      "compare with",
+      "vs",
+      "versus",
+      "difference",
+      "compare"
+    ],
+    "example": [
+      "example",
+      "sample",
+      "code example",
+      "demonstration",
+      "examples",
+      "demo"
+    ],
+    "beginner": [
+      "basics",
+      "basic",
+      "intro",
+      "new",
+      "starter",
+      "beginner",
+      "newbie",
+      "introduction"
+    ],
+    "syntax": [
+      "grammar",
+      "structure",
+      "format",
+      "syntax"
+    ],
+    "value": [
+      "data",
+      "value",
+      "values",
+      "content"
+    ],
+    "key": [
+      "index",
+      "keys",
+      "key",
+      "indices"
+    ],
+    "item": [
+      "item",
+      "entry",
+      "items",
+      "elements",
+      "element"
+    ],
+    "none": [
+      "none",
+      "null",
+      "nothing",
+      "nil",
+      "empty"
+    ],
+    "true": [
+      "true",
+      "correct",
+      "yes"
+    ],
+    "false": [
+      "incorrect",
+      "false",
+      "no"
+    ],
+    "init": [
+      "initialize",
+      "__init__",
+      "setup method",
+      "init",
+      "constructor",
+      "initialise"
+    ],
+    "self": [
+      "this",
+      "self",
+      "instance",
+      "object reference"
+    ],
+    "return": [
+      "output",
+      "send back",
+      "give back",
+      "result",
+      "return"
+    ],
+    "argument": [
+      "param",
+      "inputs",
+      "input",
+      "parameter",
+      "arg",
+      "argument"
+    ],
+    "lambda": [
+      "inline function",
+      "anonymous function",
+      "one line function",
+      "lambda"
+    ],
+    "recursion": [
+      "recursion",
+      "recurse",
+      "recursive",
+      "call itself"
+    ],
+    "pythonic": [
+      "best practice",
+      "python style",
+      "clean code",
+      "idiomatic",
+      "pythonic"
+    ],
+    "garbage collection": [
+      "garbage collector",
+      "gc",
+      "garbage collection",
+      "memory management"
+    ],
+    "interpreter": [
+      "interpreter",
+      "interpreted",
+      "compiled",
+      "execution",
+      "compile"
+    ],
+    "indentation": [
+      "indent",
+      "whitespace",
+      "spacing",
+      "indentation"
+    ],
+    "package": [
+      "library",
+      "install package",
+      "package",
+      "packages",
+      "libraries"
+    ],
+    "virtual environment": [
+      "virtual environment",
+      "venv",
+      "virtualenv",
+      "env",
+      "virtual env"
+    ],
+    "fstring": [
+      "formatted string",
+      "fstring",
+      "string formatting",
+      "f string",
+      "format string"
+    ],
+    "list comprehension": [
+      "listcomp",
+      "comprehension",
+      "list comp",
+      "list comprehension"
+    ]
+  }
+}
