@@ -1,6 +1,6 @@
 # Python Q&A Chatbot
 
-A personal chatbot that answers Python programming questions. Built with a custom TF-IDF + cosine similarity NLP engine — no APIs, no external ML libraries, works fully offline.
+A personal chatbot that answers Python programming questions. Built with a custom TF-IDF + cosine similarity NLP engine — no APIs, no external ML libraries, works fully offline.   The Deployed Link = https://python-chatbot-hehe-me3ntwe0k-bipinjrs-projects.vercel.app/
 
 ## What it does
 
